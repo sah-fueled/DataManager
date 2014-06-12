@@ -1,0 +1,637 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A0773FF800B47B8B63BF0D7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C6F1AA89CC48949D6DA40B /* libPods.a */; };
+		698B450E19457F72002EF6BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698B450D19457F72002EF6BC /* Foundation.framework */; };
+		698B451019457F72002EF6BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698B450F19457F72002EF6BC /* CoreGraphics.framework */; };
+		698B451219457F72002EF6BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698B451119457F72002EF6BC /* UIKit.framework */; };
+		698B451819457F72002EF6BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 698B451619457F72002EF6BC /* InfoPlist.strings */; };
+		698B451A19457F72002EF6BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 698B451919457F72002EF6BC /* main.m */; };
+		698B451E19457F72002EF6BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 698B451D19457F72002EF6BC /* AppDelegate.m */; };
+		698B452119457F72002EF6BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 698B451F19457F72002EF6BC /* Main.storyboard */; };
+		698B452419457F72002EF6BC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 698B452319457F72002EF6BC /* ViewController.m */; };
+		698B452619457F72002EF6BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 698B452519457F72002EF6BC /* Images.xcassets */; };
+		698B452D19457F73002EF6BC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698B452C19457F73002EF6BC /* XCTest.framework */; };
+		698B452E19457F73002EF6BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698B450D19457F72002EF6BC /* Foundation.framework */; };
+		698B452F19457F73002EF6BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698B451119457F72002EF6BC /* UIKit.framework */; };
+		698B453719457F73002EF6BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 698B453519457F73002EF6BC /* InfoPlist.strings */; };
+		698B453919457F73002EF6BC /* RestkitExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 698B453819457F73002EF6BC /* RestkitExampleTests.m */; };
+		698B454419459638002EF6BC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 698B454219459638002EF6BC /* Model.xcdatamodeld */; };
+		698B455019459A30002EF6BC /* ObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 698B454F19459A30002EF6BC /* ObjectManager.m */; };
+		698B45541945AF79002EF6BC /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 698B45531945AF79002EF6BC /* UserManager.m */; };
+		698B45581945AFF2002EF6BC /* MappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 698B45571945AFF2002EF6BC /* MappingProvider.m */; };
+		698B45641945B1E7002EF6BC /* Selfie.m in Sources */ = {isa = PBXBuildFile; fileRef = 698B45631945B1E7002EF6BC /* Selfie.m */; };
+		698B456A1945B260002EF6BC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 698B45691945B260002EF6BC /* User.m */; };
+		698B45731945E6D8002EF6BC /* SelfieManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 698B45721945E6D8002EF6BC /* SelfieManager.m */; };
+		6991601B1946D2CE002D5ED9 /* RestkitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6991601A1946D2CE002D5ED9 /* RestkitModel.m */; };
+		699160221946EF34002D5ED9 /* SelfieListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 699160211946EF34002D5ED9 /* SelfieListViewController.m */; };
+		6991602A1946FE5E002D5ED9 /* SelfieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 699160291946FE5E002D5ED9 /* SelfieTableViewCell.m */; };
+		6991602C1946FFF3002D5ED9 /* SelfieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6991602B1946FFF3002D5ED9 /* SelfieTableViewCell.xib */; };
+		69918DFF1949880200C0AE97 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 69918DFE1949880200C0AE97 /* DataManager.m */; };
+		69918E021949967E00C0AE97 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69918E011949967E00C0AE97 /* DataModel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		698B453019457F73002EF6BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 698B450219457F72002EF6BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 698B450919457F72002EF6BC;
+			remoteInfo = RestkitExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		18C6F1AA89CC48949D6DA40B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FD47EBA4A9F4A7CA93AFCF8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		698B450A19457F72002EF6BC /* RestkitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestkitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		698B450D19457F72002EF6BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		698B450F19457F72002EF6BC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		698B451119457F72002EF6BC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		698B451519457F72002EF6BC /* RestkitExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RestkitExample-Info.plist"; sourceTree = "<group>"; };
+		698B451719457F72002EF6BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		698B451919457F72002EF6BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		698B451B19457F72002EF6BC /* RestkitExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RestkitExample-Prefix.pch"; sourceTree = "<group>"; };
+		698B451C19457F72002EF6BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		698B451D19457F72002EF6BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		698B452019457F72002EF6BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		698B452219457F72002EF6BC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		698B452319457F72002EF6BC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		698B452519457F72002EF6BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		698B452B19457F73002EF6BC /* RestkitExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestkitExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		698B452C19457F73002EF6BC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		698B453419457F73002EF6BC /* RestkitExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RestkitExampleTests-Info.plist"; sourceTree = "<group>"; };
+		698B453619457F73002EF6BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		698B453819457F73002EF6BC /* RestkitExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestkitExampleTests.m; sourceTree = "<group>"; };
+		698B454319459638002EF6BC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		698B454E19459A30002EF6BC /* ObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectManager.h; path = Manager/ObjectManager.h; sourceTree = "<group>"; };
+		698B454F19459A30002EF6BC /* ObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectManager.m; path = Manager/ObjectManager.m; sourceTree = "<group>"; };
+		698B455119459A9C002EF6BC /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		698B45521945AF79002EF6BC /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserManager.h; path = Manager/UserManager.h; sourceTree = "<group>"; };
+		698B45531945AF79002EF6BC /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserManager.m; path = Manager/UserManager.m; sourceTree = "<group>"; };
+		698B45561945AFF2002EF6BC /* MappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MappingProvider.h; path = MappingProvider/MappingProvider.h; sourceTree = "<group>"; };
+		698B45571945AFF2002EF6BC /* MappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MappingProvider.m; path = MappingProvider/MappingProvider.m; sourceTree = "<group>"; };
+		698B45621945B1E7002EF6BC /* Selfie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Selfie.h; path = Entities/Selfie.h; sourceTree = "<group>"; };
+		698B45631945B1E7002EF6BC /* Selfie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Selfie.m; path = Entities/Selfie.m; sourceTree = "<group>"; };
+		698B45681945B260002EF6BC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Entities/User.h; sourceTree = "<group>"; };
+		698B45691945B260002EF6BC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Entities/User.m; sourceTree = "<group>"; };
+		698B45711945E6D8002EF6BC /* SelfieManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelfieManager.h; path = Manager/SelfieManager.h; sourceTree = "<group>"; };
+		698B45721945E6D8002EF6BC /* SelfieManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelfieManager.m; path = Manager/SelfieManager.m; sourceTree = "<group>"; };
+		699160191946D2CE002D5ED9 /* RestkitModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestkitModel.h; sourceTree = "<group>"; };
+		6991601A1946D2CE002D5ED9 /* RestkitModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestkitModel.m; sourceTree = "<group>"; };
+		699160201946EF34002D5ED9 /* SelfieListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfieListViewController.h; sourceTree = "<group>"; };
+		699160211946EF34002D5ED9 /* SelfieListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfieListViewController.m; sourceTree = "<group>"; };
+		699160281946FE5E002D5ED9 /* SelfieTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelfieTableViewCell.h; path = "Custom Cells/SelfieTableViewCell.h"; sourceTree = "<group>"; };
+		699160291946FE5E002D5ED9 /* SelfieTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelfieTableViewCell.m; path = "Custom Cells/SelfieTableViewCell.m"; sourceTree = "<group>"; };
+		6991602B1946FFF3002D5ED9 /* SelfieTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelfieTableViewCell.xib; sourceTree = "<group>"; };
+		69918DFD1949880200C0AE97 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = Manager/DataManager.h; sourceTree = "<group>"; };
+		69918DFE1949880200C0AE97 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = Manager/DataManager.m; sourceTree = "<group>"; };
+		69918E001949967E00C0AE97 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataModel.h; path = Manager/DataModel.h; sourceTree = "<group>"; };
+		69918E011949967E00C0AE97 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataModel.m; path = Manager/DataModel.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		698B450719457F72002EF6BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				698B451019457F72002EF6BC /* CoreGraphics.framework in Frameworks */,
+				698B451219457F72002EF6BC /* UIKit.framework in Frameworks */,
+				698B450E19457F72002EF6BC /* Foundation.framework in Frameworks */,
+				1A0773FF800B47B8B63BF0D7 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		698B452819457F73002EF6BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				698B452D19457F73002EF6BC /* XCTest.framework in Frameworks */,
+				698B452F19457F73002EF6BC /* UIKit.framework in Frameworks */,
+				698B452E19457F73002EF6BC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		698B450119457F72002EF6BC = {
+			isa = PBXGroup;
+			children = (
+				698B455119459A9C002EF6BC /* Constants.h */,
+				698B451319457F72002EF6BC /* RestkitExample */,
+				698B453219457F73002EF6BC /* RestkitExampleTests */,
+				698B450C19457F72002EF6BC /* Frameworks */,
+				698B450B19457F72002EF6BC /* Products */,
+				5FD47EBA4A9F4A7CA93AFCF8 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		698B450B19457F72002EF6BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				698B450A19457F72002EF6BC /* RestkitExample.app */,
+				698B452B19457F73002EF6BC /* RestkitExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		698B450C19457F72002EF6BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				698B450D19457F72002EF6BC /* Foundation.framework */,
+				698B450F19457F72002EF6BC /* CoreGraphics.framework */,
+				698B451119457F72002EF6BC /* UIKit.framework */,
+				698B452C19457F73002EF6BC /* XCTest.framework */,
+				18C6F1AA89CC48949D6DA40B /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		698B451319457F72002EF6BC /* RestkitExample */ = {
+			isa = PBXGroup;
+			children = (
+				699160271946FE35002D5ED9 /* Custom Cells */,
+				699160191946D2CE002D5ED9 /* RestkitModel.h */,
+				6991601A1946D2CE002D5ED9 /* RestkitModel.m */,
+				698B45551945AFAC002EF6BC /* MappingProvider */,
+				698B454D19459A0C002EF6BC /* Managers */,
+				698B454B194599D3002EF6BC /* Entities */,
+				698B451C19457F72002EF6BC /* AppDelegate.h */,
+				698B451D19457F72002EF6BC /* AppDelegate.m */,
+				698B451F19457F72002EF6BC /* Main.storyboard */,
+				698B452219457F72002EF6BC /* ViewController.h */,
+				698B452319457F72002EF6BC /* ViewController.m */,
+				698B452519457F72002EF6BC /* Images.xcassets */,
+				698B451419457F72002EF6BC /* Supporting Files */,
+				699160201946EF34002D5ED9 /* SelfieListViewController.h */,
+				699160211946EF34002D5ED9 /* SelfieListViewController.m */,
+			);
+			path = RestkitExample;
+			sourceTree = "<group>";
+		};
+		698B451419457F72002EF6BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				698B451519457F72002EF6BC /* RestkitExample-Info.plist */,
+				698B451619457F72002EF6BC /* InfoPlist.strings */,
+				698B451919457F72002EF6BC /* main.m */,
+				698B451B19457F72002EF6BC /* RestkitExample-Prefix.pch */,
+				698B454219459638002EF6BC /* Model.xcdatamodeld */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		698B453219457F73002EF6BC /* RestkitExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				698B453819457F73002EF6BC /* RestkitExampleTests.m */,
+				698B453319457F73002EF6BC /* Supporting Files */,
+			);
+			path = RestkitExampleTests;
+			sourceTree = "<group>";
+		};
+		698B453319457F73002EF6BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				698B453419457F73002EF6BC /* RestkitExampleTests-Info.plist */,
+				698B453519457F73002EF6BC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		698B454B194599D3002EF6BC /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				698B45681945B260002EF6BC /* User.h */,
+				698B45691945B260002EF6BC /* User.m */,
+				698B45621945B1E7002EF6BC /* Selfie.h */,
+				698B45631945B1E7002EF6BC /* Selfie.m */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		698B454D19459A0C002EF6BC /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				698B454E19459A30002EF6BC /* ObjectManager.h */,
+				698B454F19459A30002EF6BC /* ObjectManager.m */,
+				698B45521945AF79002EF6BC /* UserManager.h */,
+				698B45531945AF79002EF6BC /* UserManager.m */,
+				698B45711945E6D8002EF6BC /* SelfieManager.h */,
+				698B45721945E6D8002EF6BC /* SelfieManager.m */,
+				69918DFD1949880200C0AE97 /* DataManager.h */,
+				69918DFE1949880200C0AE97 /* DataManager.m */,
+				69918E001949967E00C0AE97 /* DataModel.h */,
+				69918E011949967E00C0AE97 /* DataModel.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		698B45551945AFAC002EF6BC /* MappingProvider */ = {
+			isa = PBXGroup;
+			children = (
+				698B45561945AFF2002EF6BC /* MappingProvider.h */,
+				698B45571945AFF2002EF6BC /* MappingProvider.m */,
+			);
+			name = MappingProvider;
+			sourceTree = "<group>";
+		};
+		699160271946FE35002D5ED9 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				699160281946FE5E002D5ED9 /* SelfieTableViewCell.h */,
+				699160291946FE5E002D5ED9 /* SelfieTableViewCell.m */,
+				6991602B1946FFF3002D5ED9 /* SelfieTableViewCell.xib */,
+			);
+			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		698B450919457F72002EF6BC /* RestkitExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 698B453C19457F73002EF6BC /* Build configuration list for PBXNativeTarget "RestkitExample" */;
+			buildPhases = (
+				D79498A92E13441F991AB4FA /* Check Pods Manifest.lock */,
+				698B450619457F72002EF6BC /* Sources */,
+				698B450719457F72002EF6BC /* Frameworks */,
+				698B450819457F72002EF6BC /* Resources */,
+				4E0984E2065C46CA9D2F9691 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RestkitExample;
+			productName = RestkitExample;
+			productReference = 698B450A19457F72002EF6BC /* RestkitExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		698B452A19457F73002EF6BC /* RestkitExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 698B453F19457F73002EF6BC /* Build configuration list for PBXNativeTarget "RestkitExampleTests" */;
+			buildPhases = (
+				698B452719457F73002EF6BC /* Sources */,
+				698B452819457F73002EF6BC /* Frameworks */,
+				698B452919457F73002EF6BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				698B453119457F73002EF6BC /* PBXTargetDependency */,
+			);
+			name = RestkitExampleTests;
+			productName = RestkitExampleTests;
+			productReference = 698B452B19457F73002EF6BC /* RestkitExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		698B450219457F72002EF6BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Fueled.Inc;
+				TargetAttributes = {
+					698B452A19457F73002EF6BC = {
+						TestTargetID = 698B450919457F72002EF6BC;
+					};
+				};
+			};
+			buildConfigurationList = 698B450519457F72002EF6BC /* Build configuration list for PBXProject "RestkitExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 698B450119457F72002EF6BC;
+			productRefGroup = 698B450B19457F72002EF6BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				698B450919457F72002EF6BC /* RestkitExample */,
+				698B452A19457F73002EF6BC /* RestkitExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		698B450819457F72002EF6BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				698B452619457F72002EF6BC /* Images.xcassets in Resources */,
+				698B451819457F72002EF6BC /* InfoPlist.strings in Resources */,
+				698B452119457F72002EF6BC /* Main.storyboard in Resources */,
+				6991602C1946FFF3002D5ED9 /* SelfieTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		698B452919457F73002EF6BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				698B453719457F73002EF6BC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4E0984E2065C46CA9D2F9691 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D79498A92E13441F991AB4FA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		698B450619457F72002EF6BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				698B45641945B1E7002EF6BC /* Selfie.m in Sources */,
+				6991602A1946FE5E002D5ED9 /* SelfieTableViewCell.m in Sources */,
+				698B452419457F72002EF6BC /* ViewController.m in Sources */,
+				698B456A1945B260002EF6BC /* User.m in Sources */,
+				698B45731945E6D8002EF6BC /* SelfieManager.m in Sources */,
+				698B451E19457F72002EF6BC /* AppDelegate.m in Sources */,
+				699160221946EF34002D5ED9 /* SelfieListViewController.m in Sources */,
+				698B45541945AF79002EF6BC /* UserManager.m in Sources */,
+				698B45581945AFF2002EF6BC /* MappingProvider.m in Sources */,
+				69918DFF1949880200C0AE97 /* DataManager.m in Sources */,
+				6991601B1946D2CE002D5ED9 /* RestkitModel.m in Sources */,
+				69918E021949967E00C0AE97 /* DataModel.m in Sources */,
+				698B451A19457F72002EF6BC /* main.m in Sources */,
+				698B455019459A30002EF6BC /* ObjectManager.m in Sources */,
+				698B454419459638002EF6BC /* Model.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		698B452719457F73002EF6BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				698B453919457F73002EF6BC /* RestkitExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		698B453119457F73002EF6BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 698B450919457F72002EF6BC /* RestkitExample */;
+			targetProxy = 698B453019457F73002EF6BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		698B451619457F72002EF6BC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				698B451719457F72002EF6BC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		698B451F19457F72002EF6BC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				698B452019457F72002EF6BC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		698B453519457F73002EF6BC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				698B453619457F73002EF6BC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		698B453A19457F73002EF6BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		698B453B19457F73002EF6BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		698B453D19457F73002EF6BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FD47EBA4A9F4A7CA93AFCF8 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RestkitExample/RestkitExample-Prefix.pch";
+				INFOPLIST_FILE = "RestkitExample/RestkitExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		698B453E19457F73002EF6BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FD47EBA4A9F4A7CA93AFCF8 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RestkitExample/RestkitExample-Prefix.pch";
+				INFOPLIST_FILE = "RestkitExample/RestkitExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		698B454019457F73002EF6BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RestkitExample.app/RestkitExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RestkitExample/RestkitExample-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RestkitExampleTests/RestkitExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		698B454119457F73002EF6BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RestkitExample.app/RestkitExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RestkitExample/RestkitExample-Prefix.pch";
+				INFOPLIST_FILE = "RestkitExampleTests/RestkitExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		698B450519457F72002EF6BC /* Build configuration list for PBXProject "RestkitExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				698B453A19457F73002EF6BC /* Debug */,
+				698B453B19457F73002EF6BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		698B453C19457F73002EF6BC /* Build configuration list for PBXNativeTarget "RestkitExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				698B453D19457F73002EF6BC /* Debug */,
+				698B453E19457F73002EF6BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		698B453F19457F73002EF6BC /* Build configuration list for PBXNativeTarget "RestkitExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				698B454019457F73002EF6BC /* Debug */,
+				698B454119457F73002EF6BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		698B454219459638002EF6BC /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				698B454319459638002EF6BC /* Model.xcdatamodel */,
+			);
+			currentVersion = 698B454319459638002EF6BC /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 698B450219457F72002EF6BC /* Project object */;
+}
