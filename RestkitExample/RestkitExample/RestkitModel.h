@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "User.h"
 
 @interface RestkitModel : NSObject
+
+@property (nonatomic,strong) User *currentUser;
 
 + (RestkitModel *)sharedModel;
 

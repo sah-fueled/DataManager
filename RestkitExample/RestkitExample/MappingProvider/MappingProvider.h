@@ -14,7 +14,9 @@
 @interface MappingProvider : NSObject
 
 + (RKObjectMapping *)userMapping;
++ (RKObjectMapping *)selfieMapping;
+
 + (RKEntityMapping *)userMappingForStore:(RKManagedObjectStore *)store;
 + (RKEntityMapping *)selfieMappingForStore:(RKManagedObjectStore *)store;
-
++ (RKEntityMapping *)selfieRequestMappingForStore:(RKManagedObjectStore *)store;
 @end

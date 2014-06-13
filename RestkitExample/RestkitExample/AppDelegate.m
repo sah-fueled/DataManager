@@ -7,21 +7,25 @@
 //
 
 #import "AppDelegate.h"
-#import "UserManager.h"
+#import "DataManager.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [[ObjectManager sharedManager] authorizeWithCompletion:^(BOOL success) {
-    if (success) {
-
-    }else {
-    
-    }
+  [[DataManager sharedManager] authorizeWithCompletion:^(BOOL success) {
     
   }];
   
+//  [[ObjectManager sharedManager] authorizeWithCompletion:^(BOOL success) {
+//    if (success) {
+//
+//    }else {
+//    
+//    }
+//    
+//  }];
+//  
   
   // Override point for customization after application launch.
     return YES;

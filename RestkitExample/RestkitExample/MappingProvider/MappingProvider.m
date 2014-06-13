@@ -9,6 +9,7 @@
 #import <RestKit/RestKit.h>
 #import "MappingProvider.h"
 #import "User.h"
+#import "Selfie.h"
 
 @implementation MappingProvider
 
@@ -50,16 +51,49 @@
   return mapping;
 }
 
-+ (void)setPaginationMapping {
-  RKObjectMapping *paginationMapping = [RKObjectMapping mappingForClass:[RKPaginator class]];
-  
-  [paginationMapping addAttributeMappingsFromDictionary:@{
-                                                          @"pagination.per_page": @"perPage",
-                                                          @"pagination.total_pages": @"pageCount",
-                                                          @"count": @"objectCount",
-                                                          }];
-  
++ (RKObjectMapping *)selfieRequestMappingForStore:(RKManagedObjectStore *)store {
+  RKObjectMapping *mapping = [RKObjectMapping requestMapping];
+//  RKEntityMapping *mapping = [RKEntityMapping mappingForEntityForName:@"Selfie" inManagedObjectStore:store];
+//  RKObjectMapping *mapping =
+  NSDictionary *mappingDictionary = @{@"selfieId":@"id",
+                                      @"caption": @"caption",
+                                      @"category": @"category",
+                                      @"imageSize":@"imageSize",
+                                      @"imageURL":@"imageUrl",
+                                      @"isDeleted":@"isDeleted"
+                                      };
+////  mapping.identificationAttributes = @[@"selfieId"];
+  [mapping addAttributeMappingsFromDictionary:mappingDictionary];
+//  [mapping addAttributeMappingsFromArray:@[@"id", @"caption", @"category",@"imageSize"]];
+
+  [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"user" toKeyPath:@"user" withMapping:[MappingProvider userMapping].inverseMapping]];
+  return mapping;
 }
+
++ (RKObjectMapping *)selfieMapping {
+  RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Selfie class]];
+  NSDictionary *mappingDictionary = @{@"id": @"selfieId",
+                                      @"caption": @"caption",
+                                      @"category": @"category",
+                                      @"imageSize":@"imageSize",
+                                      @"imageUrl":@"imageURL",
+                                      @"isDeleted":@"isDeleted"
+                                      };
+  [mapping addAttributeMappingsFromDictionary:mappingDictionary];
+  [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"user" toKeyPath:@"user" withMapping:[MappingProvider userMapping]]];
+  return mapping;
+}
+
+//+ (void)setPaginationMapping {
+//  RKObjectMapping *paginationMapping = [RKObjectMapping mappingForClass:[RKPaginator class]];
+//  
+//  [paginationMapping addAttributeMappingsFromDictionary:@{
+//                                                          @"pagination.per_page": @"perPage",
+//                                                          @"pagination.total_pages": @"pageCount",
+//                                                          @"count": @"objectCount",
+//                                                          }];
+//  
+//}
 
 
 @end

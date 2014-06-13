@@ -7,13 +7,10 @@
 //
 
 #import "RestkitModel.h"
-#import "ObjectManager.h"
 
 static RestkitModel *sharedModel = nil;
 
 @interface RestkitModel ()
-
-@property (nonatomic, strong) ObjectManager *objectManager;
 
 @end
 
@@ -32,18 +29,4 @@ static RestkitModel *sharedModel = nil;
     
 }
 
-- (void) loadAuthenticatedUser:(void (^)(User *))success failure:(void (^)(RKObjectRequestOperation *, NSError *))failure {
-//  [self.objectManager setupResponseDescriptors:]
-  NSLog(@"self = %@",self);
-  [self.objectManager getObjectsAtPath:@"user/" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-    if (success) {
-      User *currentUser = (User *)[mappingResult.array firstObject];
-      success(currentUser);
-    }
-  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-    if (failure) {
-      failure(operation, error);
-    }
-  }];
-}
 @end

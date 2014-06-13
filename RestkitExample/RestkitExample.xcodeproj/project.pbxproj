@@ -23,18 +23,18 @@
 		698B453719457F73002EF6BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 698B453519457F73002EF6BC /* InfoPlist.strings */; };
 		698B453919457F73002EF6BC /* RestkitExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 698B453819457F73002EF6BC /* RestkitExampleTests.m */; };
 		698B454419459638002EF6BC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 698B454219459638002EF6BC /* Model.xcdatamodeld */; };
-		698B455019459A30002EF6BC /* ObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 698B454F19459A30002EF6BC /* ObjectManager.m */; };
-		698B45541945AF79002EF6BC /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 698B45531945AF79002EF6BC /* UserManager.m */; };
 		698B45581945AFF2002EF6BC /* MappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 698B45571945AFF2002EF6BC /* MappingProvider.m */; };
 		698B45641945B1E7002EF6BC /* Selfie.m in Sources */ = {isa = PBXBuildFile; fileRef = 698B45631945B1E7002EF6BC /* Selfie.m */; };
 		698B456A1945B260002EF6BC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 698B45691945B260002EF6BC /* User.m */; };
-		698B45731945E6D8002EF6BC /* SelfieManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 698B45721945E6D8002EF6BC /* SelfieManager.m */; };
 		6991601B1946D2CE002D5ED9 /* RestkitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6991601A1946D2CE002D5ED9 /* RestkitModel.m */; };
 		699160221946EF34002D5ED9 /* SelfieListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 699160211946EF34002D5ED9 /* SelfieListViewController.m */; };
 		6991602A1946FE5E002D5ED9 /* SelfieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 699160291946FE5E002D5ED9 /* SelfieTableViewCell.m */; };
 		6991602C1946FFF3002D5ED9 /* SelfieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6991602B1946FFF3002D5ED9 /* SelfieTableViewCell.xib */; };
 		69918DFF1949880200C0AE97 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 69918DFE1949880200C0AE97 /* DataManager.m */; };
-		69918E021949967E00C0AE97 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69918E011949967E00C0AE97 /* DataModel.m */; };
+		69918E051949A2E400C0AE97 /* UserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 69918E041949A2E400C0AE97 /* UserDataManager.m */; };
+		69918E081949ADAC00C0AE97 /* SelfieDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 69918E071949ADAC00C0AE97 /* SelfieDataManager.m */; };
+		69A026CC1949E42C00EE82D5 /* SelfieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A026CB1949E42C00EE82D5 /* SelfieDetailViewController.m */; };
+		69BBA2A6194ADA3700558467 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BBA2A5194ADA3700558467 /* LoginView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,19 +70,13 @@
 		698B453619457F73002EF6BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		698B453819457F73002EF6BC /* RestkitExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestkitExampleTests.m; sourceTree = "<group>"; };
 		698B454319459638002EF6BC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		698B454E19459A30002EF6BC /* ObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectManager.h; path = Manager/ObjectManager.h; sourceTree = "<group>"; };
-		698B454F19459A30002EF6BC /* ObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectManager.m; path = Manager/ObjectManager.m; sourceTree = "<group>"; };
 		698B455119459A9C002EF6BC /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		698B45521945AF79002EF6BC /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserManager.h; path = Manager/UserManager.h; sourceTree = "<group>"; };
-		698B45531945AF79002EF6BC /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserManager.m; path = Manager/UserManager.m; sourceTree = "<group>"; };
 		698B45561945AFF2002EF6BC /* MappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MappingProvider.h; path = MappingProvider/MappingProvider.h; sourceTree = "<group>"; };
 		698B45571945AFF2002EF6BC /* MappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MappingProvider.m; path = MappingProvider/MappingProvider.m; sourceTree = "<group>"; };
 		698B45621945B1E7002EF6BC /* Selfie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Selfie.h; path = Entities/Selfie.h; sourceTree = "<group>"; };
 		698B45631945B1E7002EF6BC /* Selfie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Selfie.m; path = Entities/Selfie.m; sourceTree = "<group>"; };
 		698B45681945B260002EF6BC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Entities/User.h; sourceTree = "<group>"; };
 		698B45691945B260002EF6BC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Entities/User.m; sourceTree = "<group>"; };
-		698B45711945E6D8002EF6BC /* SelfieManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelfieManager.h; path = Manager/SelfieManager.h; sourceTree = "<group>"; };
-		698B45721945E6D8002EF6BC /* SelfieManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelfieManager.m; path = Manager/SelfieManager.m; sourceTree = "<group>"; };
 		699160191946D2CE002D5ED9 /* RestkitModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestkitModel.h; sourceTree = "<group>"; };
 		6991601A1946D2CE002D5ED9 /* RestkitModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestkitModel.m; sourceTree = "<group>"; };
 		699160201946EF34002D5ED9 /* SelfieListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfieListViewController.h; sourceTree = "<group>"; };
@@ -92,8 +86,14 @@
 		6991602B1946FFF3002D5ED9 /* SelfieTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelfieTableViewCell.xib; sourceTree = "<group>"; };
 		69918DFD1949880200C0AE97 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = Manager/DataManager.h; sourceTree = "<group>"; };
 		69918DFE1949880200C0AE97 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = Manager/DataManager.m; sourceTree = "<group>"; };
-		69918E001949967E00C0AE97 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataModel.h; path = Manager/DataModel.h; sourceTree = "<group>"; };
-		69918E011949967E00C0AE97 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataModel.m; path = Manager/DataModel.m; sourceTree = "<group>"; };
+		69918E031949A2E400C0AE97 /* UserDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDataManager.h; path = Manager/UserDataManager.h; sourceTree = "<group>"; };
+		69918E041949A2E400C0AE97 /* UserDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDataManager.m; path = Manager/UserDataManager.m; sourceTree = "<group>"; };
+		69918E061949ADAC00C0AE97 /* SelfieDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelfieDataManager.h; path = Manager/SelfieDataManager.h; sourceTree = "<group>"; };
+		69918E071949ADAC00C0AE97 /* SelfieDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelfieDataManager.m; path = Manager/SelfieDataManager.m; sourceTree = "<group>"; };
+		69A026CA1949E42C00EE82D5 /* SelfieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfieDetailViewController.h; sourceTree = "<group>"; };
+		69A026CB1949E42C00EE82D5 /* SelfieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfieDetailViewController.m; sourceTree = "<group>"; };
+		69BBA2A4194ADA3700558467 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginView.h; path = CustomViews/LoginView.h; sourceTree = "<group>"; };
+		69BBA2A5194ADA3700558467 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginView.m; path = CustomViews/LoginView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +157,7 @@
 		698B451319457F72002EF6BC /* RestkitExample */ = {
 			isa = PBXGroup;
 			children = (
+				69BBA2A3194ADA0700558467 /* CustomView */,
 				699160271946FE35002D5ED9 /* Custom Cells */,
 				699160191946D2CE002D5ED9 /* RestkitModel.h */,
 				6991601A1946D2CE002D5ED9 /* RestkitModel.m */,
@@ -168,10 +169,12 @@
 				698B451F19457F72002EF6BC /* Main.storyboard */,
 				698B452219457F72002EF6BC /* ViewController.h */,
 				698B452319457F72002EF6BC /* ViewController.m */,
-				698B452519457F72002EF6BC /* Images.xcassets */,
-				698B451419457F72002EF6BC /* Supporting Files */,
 				699160201946EF34002D5ED9 /* SelfieListViewController.h */,
 				699160211946EF34002D5ED9 /* SelfieListViewController.m */,
+				69A026CA1949E42C00EE82D5 /* SelfieDetailViewController.h */,
+				69A026CB1949E42C00EE82D5 /* SelfieDetailViewController.m */,
+				698B452519457F72002EF6BC /* Images.xcassets */,
+				698B451419457F72002EF6BC /* Supporting Files */,
 			);
 			path = RestkitExample;
 			sourceTree = "<group>";
@@ -220,16 +223,12 @@
 		698B454D19459A0C002EF6BC /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				698B454E19459A30002EF6BC /* ObjectManager.h */,
-				698B454F19459A30002EF6BC /* ObjectManager.m */,
-				698B45521945AF79002EF6BC /* UserManager.h */,
-				698B45531945AF79002EF6BC /* UserManager.m */,
-				698B45711945E6D8002EF6BC /* SelfieManager.h */,
-				698B45721945E6D8002EF6BC /* SelfieManager.m */,
 				69918DFD1949880200C0AE97 /* DataManager.h */,
 				69918DFE1949880200C0AE97 /* DataManager.m */,
-				69918E001949967E00C0AE97 /* DataModel.h */,
-				69918E011949967E00C0AE97 /* DataModel.m */,
+				69918E061949ADAC00C0AE97 /* SelfieDataManager.h */,
+				69918E071949ADAC00C0AE97 /* SelfieDataManager.m */,
+				69918E031949A2E400C0AE97 /* UserDataManager.h */,
+				69918E041949A2E400C0AE97 /* UserDataManager.m */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -251,6 +250,15 @@
 				6991602B1946FFF3002D5ED9 /* SelfieTableViewCell.xib */,
 			);
 			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		69BBA2A3194ADA0700558467 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				69BBA2A4194ADA3700558467 /* LoginView.h */,
+				69BBA2A5194ADA3700558467 /* LoginView.m */,
+			);
+			name = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,20 +394,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69918E051949A2E400C0AE97 /* UserDataManager.m in Sources */,
 				698B45641945B1E7002EF6BC /* Selfie.m in Sources */,
 				6991602A1946FE5E002D5ED9 /* SelfieTableViewCell.m in Sources */,
+				69BBA2A6194ADA3700558467 /* LoginView.m in Sources */,
 				698B452419457F72002EF6BC /* ViewController.m in Sources */,
 				698B456A1945B260002EF6BC /* User.m in Sources */,
-				698B45731945E6D8002EF6BC /* SelfieManager.m in Sources */,
 				698B451E19457F72002EF6BC /* AppDelegate.m in Sources */,
 				699160221946EF34002D5ED9 /* SelfieListViewController.m in Sources */,
-				698B45541945AF79002EF6BC /* UserManager.m in Sources */,
+				69918E081949ADAC00C0AE97 /* SelfieDataManager.m in Sources */,
 				698B45581945AFF2002EF6BC /* MappingProvider.m in Sources */,
+				69A026CC1949E42C00EE82D5 /* SelfieDetailViewController.m in Sources */,
 				69918DFF1949880200C0AE97 /* DataManager.m in Sources */,
 				6991601B1946D2CE002D5ED9 /* RestkitModel.m in Sources */,
-				69918E021949967E00C0AE97 /* DataModel.m in Sources */,
 				698B451A19457F72002EF6BC /* main.m in Sources */,
-				698B455019459A30002EF6BC /* ObjectManager.m in Sources */,
 				698B454419459638002EF6BC /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

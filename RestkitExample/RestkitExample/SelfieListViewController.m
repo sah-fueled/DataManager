@@ -7,12 +7,13 @@
 //
 
 #import "SelfieListViewController.h"
-#import "SelfieManager.h"
 #import "SelfieTableViewCell.h"
 #import "Restkit.h"
-#import "ObjectManager.h"
+#import "SelfieDataManager.h"
+#import "SelfieDetailViewController.h"
+#import "Selfie.h"
 
-@interface SelfieListViewController ()<NSFetchedResultsControllerDelegate , UITableViewDataSource, UITableViewDataSource>
+@interface SelfieListViewController ()<NSFetchedResultsControllerDelegate , UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -21,6 +22,7 @@
 
 @property (nonatomic, assign) BOOL userInitiatedScrolling;
 @property (nonatomic, assign) BOOL userScrolling;
+@property (nonatomic, strong) Selfie *selectedSelfie;
 @end
 
 @implementation SelfieListViewController
@@ -38,14 +40,25 @@
   [super viewDidLoad];
   [self.tableView registerClass:[SelfieTableViewCell class] forCellReuseIdentifier:@"selfieCell"];
   [self.tableView registerNib:[UINib nibWithNibName:@"SelfieTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"selfieCell"];
+  NSLog(@"auth = %@",[SelfieDataManager sharedManager].objectManager.HTTPClient.defaultHeaders);
+  [[SelfieDataManager sharedManager] shouldDataPersist:YES];
+  [[SelfieDataManager sharedManager]setupPagination];
+  [[SelfieDataManager sharedManager].paginator loadPage:1];
+
+//  [[SelfieDataManager sharedManager]fetchObjectsWithCompletion:^(NSArray *objects, NSError *error) {
+//    
+//  }];
+  self.tableView.delegate = self;
   [self configureFetchResultsController];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  [SelfieManager loadPaginatedSelfieForUser:self.user success:^(NSArray *selfies, NSError *error) {
-   
- }];
+  SelfieDataManager *selfieManager = [SelfieDataManager sharedManager];
+//  NSLog(@"Selfie datamodel = %@",selfieManager);
+//  [SelfieManager loadPaginatedSelfieForUser:self.user success:^(NSArray *selfies, NSError *error) {
+//   
+// }];
 //  [SelfieManager loadSelfieForUser:self.user success:^(NSArray *selfies, NSError *error) {
 //    NSLog(@"array = %@ error = %@",selfies,error);
 //  }];
@@ -59,7 +72,7 @@
 //  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.user == %@",self.user]; 
 //  [fetchRequest setPredicate:predicate];
   NSError *error = nil;
-  RKManagedObjectStore *store = [ObjectManager sharedManager].store;
+  RKManagedObjectStore *store = [SelfieDataManager sharedManager].objectManager.managedObjectStore;
   NSLog(@"object store = %@ in List",store);
   NSLog(@"managed object conetxt = %@ in List",store.mainQueueManagedObjectContext);
   // Setup fetched results
@@ -87,6 +100,12 @@
   return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  self.selectedSelfie = [self.fetchedResultsController objectAtIndexPath:indexPath];
+  NSLog(@"selected selfie = %@",self.selectedSelfie);
+  [self performSegueWithIdentifier:@"showDetails" sender:nil];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
   return 250;
 }
@@ -106,11 +125,10 @@
   if(self.userInitiatedScrolling) {
     CGFloat currentOffset = scrollView.contentOffset.y + scrollView.frame.size.height;
     if(currentOffset > (scrollView.contentSize.height ) && self.userScrolling) {
-      if ([[ObjectManager sharedManager].paginator isLoaded] && [[ObjectManager sharedManager].paginator hasNextPage]) {
-        [[ObjectManager sharedManager].paginator loadNextPage];
+      if ([[SelfieDataManager sharedManager].paginator isLoaded] && [[SelfieDataManager sharedManager].paginator hasNextPage]) {
+        [[SelfieDataManager sharedManager].paginator loadNextPage];
         NSLog(@"Load next");
       }
-
     }
   }
 }
@@ -121,6 +139,16 @@
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
   self.userInitiatedScrolling = NO;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  SelfieDetailViewController *vc = segue.destinationViewController;
+  vc.selfie = self.selectedSelfie;
+  self.selectedSelfie = nil;
+}
+
+- (IBAction)createNew:(id)sender {
+  [self performSegueWithIdentifier:@"showDetails" sender:nil];
 }
 
 @end

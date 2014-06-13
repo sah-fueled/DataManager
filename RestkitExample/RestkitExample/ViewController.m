@@ -7,14 +7,21 @@
 //
 
 #import "ViewController.h"
-#import "UserManager.h"
-#import "SelfieManager.h"
-#import "ObjectManager.h"
 #import "SelfieListViewController.h"
+#import "UserDataManager.h"
+#import "SelfieDataManager.h"
+#import "DataManager.h"
+#import "User.h"
+#import "RestkitModel.h"
 
 @interface ViewController ()
 
 @property (nonatomic, strong) User *user;
+@property (weak, nonatomic) IBOutlet UITextField *loginUsername;
+@property (weak, nonatomic) IBOutlet UITextField *loginPassword;
+@property (weak, nonatomic) IBOutlet UITextField *signupUsernameField;
+@property (weak, nonatomic) IBOutlet UITextField *signupPasswordField;
+@property (weak, nonatomic) IBOutlet UITextField *confPasswordField;
 
 @end
 
@@ -22,8 +29,19 @@
 
 - (void)viewDidLoad
 {
+
     [super viewDidLoad];
+  UserDataManager *userManager = [UserDataManager sharedManager];
+  SelfieDataManager *selfieManager = [SelfieDataManager sharedManager];
+  NSLog(@"User datamodel = %@",userManager);
+  NSLog(@"Selfie datamodel = %@",selfieManager);
+
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  [self performSegueWithIdentifier:@"showSelfie" sender:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -32,16 +50,16 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)load:(id)sender {
-  [UserManager loadAuthenticatedUser:^(User *user) {
-    self.user = user;
-
-
-  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-  }];
-  
-  [SelfieManager loadSelfieForUser:self.user success:^(NSArray *selfies, NSError *error) {
-    NSLog(@"array = %@ error = %@",selfies,error);
-  }];
+//  [UserManager loadAuthenticatedUser:^(User *user) {
+//    self.user = user;
+//
+//
+//  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+//  }];
+//
+//  [SelfieManager loadSelfieForUser:self.user success:^(NSArray *selfies, NSError *error) {
+//    NSLog(@"array = %@ error = %@",selfies,error);
+//  }];
 
 }
 - (IBAction)loadSelfies:(id)sender {
@@ -107,5 +125,23 @@
 /**
  
 */
+- (IBAction)signup:(id)sender {
+  
+//  User *user = [User new];
+//  user.email = self.signupUsernameField.
+}
+
+- (IBAction)login:(id)sender {
+  NSDictionary *param = @{@"name" : self.loginUsername.text};
+  [UserDataManager sharedManager].path = @"user/";
+  [[UserDataManager sharedManager]shouldDataPersist:YES];
+  [[UserDataManager sharedManager].objectManager getObjectsAtPath:@"user/" parameters:param success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    [RestkitModel sharedModel].currentUser = (User *)[mappingResult firstObject];
+    [self performSegueWithIdentifier:@"showSelfie" sender:nil];
+
+  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+
+  }];
+}
 
 @end

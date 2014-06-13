@@ -9,8 +9,14 @@
 #ifndef RestkitExample_Constants_h
 #define RestkitExample_Constants_h
 
-#define BASE_URL  @"http://10.0.1.126:8001/api/"
-//#define BASE_URL  @"http://10.0.1.25:8001/api/"
+//#define BASE_URL          @"http://10.0.1.126:8001/api/"
+//#define BASE_URL          @"http://10.0.1.25:8001/api/"
+#define BASE_URL        @"http://django-rest-api-example.herokuapp.com/api/"
+#define kServerUsername @"demo@ophio.co.in"
+#define kServerPassword @"demo123"
+
+#define kEntityUser     @"User"
+#define kEntitySelfie   @"Selfie"
 
 
 #endif
