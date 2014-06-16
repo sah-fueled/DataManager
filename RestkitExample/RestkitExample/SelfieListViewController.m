@@ -10,6 +10,7 @@
 #import "SelfieTableViewCell.h"
 #import "Restkit.h"
 #import "SelfieDataManager.h"
+#import "UserDataManager.h"
 #import "SelfieDetailViewController.h"
 #import "Selfie.h"
 
@@ -38,30 +39,36 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+
   [self.tableView registerClass:[SelfieTableViewCell class] forCellReuseIdentifier:@"selfieCell"];
   [self.tableView registerNib:[UINib nibWithNibName:@"SelfieTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"selfieCell"];
-  NSLog(@"auth = %@",[SelfieDataManager sharedManager].objectManager.HTTPClient.defaultHeaders);
-  [[SelfieDataManager sharedManager] shouldDataPersist:YES];
-  [[SelfieDataManager sharedManager]setupPagination];
-  [[SelfieDataManager sharedManager].paginator loadPage:1];
-
-//  [[SelfieDataManager sharedManager]fetchObjectsWithCompletion:^(NSArray *objects, NSError *error) {
-//    
+  [[UserDataManager sharedManager] authorizeWithCompletion:^(BOOL success) {
+    [[UserDataManager sharedManager] shouldDataPersist:YES];
+    [[UserDataManager sharedManager]setPath:@"user/"];
+    [[UserDataManager sharedManager] fetchObjectsWithCompletion:^(NSArray *objects, NSError *error) {
+      [[SelfieDataManager sharedManager]authorizeWithCompletion:^(BOOL success) {
+        NSLog(@"auth = %@",[SelfieDataManager sharedManager].objectManager.HTTPClient.defaultHeaders);
+        [[SelfieDataManager sharedManager] shouldDataPersist:YES];
+        [[SelfieDataManager sharedManager]setupPagination];
+        [[SelfieDataManager sharedManager].paginator loadPage:1];
+        [self configureFetchResultsController];
+        [self.tableView reloadData];
+      }];
+    }];
+    
+  }];
+//  [[SelfieDataManager sharedManager]authorizeWithCompletion:^(BOOL success) {
+//
+//    [[SelfieDataManager sharedManager] shouldDataPersist:NO];
+//    [[SelfieDataManager sharedManager] setPath:@"selfie/"];
+//    [[SelfieDataManager sharedManager] fetchObjectsWithCompletion:^(NSArray *objects, NSError *error) {
+//      
+//    }];
 //  }];
-  self.tableView.delegate = self;
-  [self configureFetchResultsController];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  SelfieDataManager *selfieManager = [SelfieDataManager sharedManager];
-//  NSLog(@"Selfie datamodel = %@",selfieManager);
-//  [SelfieManager loadPaginatedSelfieForUser:self.user success:^(NSArray *selfies, NSError *error) {
-//   
-// }];
-//  [SelfieManager loadSelfieForUser:self.user success:^(NSArray *selfies, NSError *error) {
-//    NSLog(@"array = %@ error = %@",selfies,error);
-//  }];
 }
 
 - (void)configureFetchResultsController {
@@ -75,27 +82,29 @@
   RKManagedObjectStore *store = [SelfieDataManager sharedManager].objectManager.managedObjectStore;
   NSLog(@"object store = %@ in List",store);
   NSLog(@"managed object conetxt = %@ in List",store.mainQueueManagedObjectContext);
-  // Setup fetched results
   self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                                                       managedObjectContext: store.mainQueueManagedObjectContext
                                                                         sectionNameKeyPath:nil
                                                                                  cacheName:nil];
   [self.fetchedResultsController setDelegate:self];
   BOOL fetchSuccessful = [self.fetchedResultsController performFetch:&error];
-//  NSAssert([[self.fetchedResultsController fetchedObjects] count], @"Seeding didn't work...");
   if (! fetchSuccessful) {
     NSLog(@"Error fetching data");
+  }else {
+    NSLog(@"Number of objects = %d",self.fetchedResultsController.fetchedObjects.count);
   }
 
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+     NSLog(@"Number of objects = %d",self.fetchedResultsController.fetchedObjects.count);
   return self.fetchedResultsController.fetchedObjects.count;
 }
 
 - (SelfieTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   SelfieTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"selfieCell"];
 //  NSLog(@"selfie inside cell = %@",[self.fetchedResultsController objectAtIndexPath:indexPath]);
+  NSLog(@"selfie = %@",[self.fetchedResultsController objectAtIndexPath:indexPath]);
   [cell initializeWithSelfie:[self.fetchedResultsController objectAtIndexPath:indexPath]];
   return cell;
 }

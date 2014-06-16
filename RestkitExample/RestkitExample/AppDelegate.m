@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DataManager.h"
+#import "SelfieDataManager.h"
 
 @implementation AppDelegate
 
@@ -16,7 +17,7 @@
   [[DataManager sharedManager] authorizeWithCompletion:^(BOOL success) {
     
   }];
-  
+
 //  [[ObjectManager sharedManager] authorizeWithCompletion:^(BOOL success) {
 //    if (success) {
 //

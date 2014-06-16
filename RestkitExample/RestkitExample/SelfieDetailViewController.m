@@ -68,8 +68,6 @@
       NSLog(@"error = %@",error);
     }];
   }
-  
-  [[SelfieDataManager sharedManager].objectManager multipartFormRequestWithObject:<#(id)#> method:<#(RKRequestMethod)#> path:<#(NSString *)#> parameters:<#(NSDictionary *)#> constructingBodyWithBlock:<#^(id<AFMultipartFormData> formData)block#>];
 }
 
 @end

@@ -29,14 +29,8 @@
 
 - (void)viewDidLoad
 {
+  [super viewDidLoad];
 
-    [super viewDidLoad];
-  UserDataManager *userManager = [UserDataManager sharedManager];
-  SelfieDataManager *selfieManager = [SelfieDataManager sharedManager];
-  NSLog(@"User datamodel = %@",userManager);
-  NSLog(@"Selfie datamodel = %@",selfieManager);
-
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -57,9 +51,7 @@
 //  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
 //  }];
 //
-//  [SelfieManager loadSelfieForUser:self.user success:^(NSArray *selfies, NSError *error) {
-//    NSLog(@"array = %@ error = %@",selfies,error);
-//  }];
+
 
 }
 - (IBAction)loadSelfies:(id)sender {

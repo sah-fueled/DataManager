@@ -2,7 +2,7 @@
 //  Selfie.m
 //  RestkitExample
 //
-//  Created by sah-fueled on 09/06/14.
+//  Created by sah-fueled on 16/06/14.
 //  Copyright (c) 2014 Fueled.Inc. All rights reserved.
 //
 
@@ -18,6 +18,7 @@
 @dynamic imageURL;
 @dynamic isDeletedSelfie;
 @dynamic selfieId;
+@dynamic userId;
 @dynamic user;
 
 @end

@@ -20,9 +20,9 @@ static SelfieDataManager *sharedDataManager = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     sharedDataManager = [super sharedManager];
-    [sharedDataManager authorizeWithCompletion:^(BOOL success) {
-    
-    }];
+//    [sharedDataManager authorizeWithCompletion:^(BOOL success) {
+//    
+//    }];
   });
   return sharedDataManager;
 }

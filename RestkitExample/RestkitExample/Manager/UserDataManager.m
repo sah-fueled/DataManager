@@ -19,9 +19,9 @@ static UserDataManager *sharedDataManager = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     sharedDataManager = [super sharedManager];
-    [sharedDataManager authorizeWithCompletion:^(BOOL success) {
-      
-    }];
+//    [sharedDataManager authorizeWithCompletion:^(BOOL success) {
+//      
+//    }];
   });
   return sharedDataManager;
 }
@@ -52,7 +52,7 @@ static UserDataManager *sharedDataManager = nil;
 
 - (void) loadAuthenticatedUser:(void (^)(User *))success failure:(void (^)(RKObjectRequestOperation *, NSError *))failure {
  
-//  
+  
 //  [self getObjectsAtPath:@"user/" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
 // if (success) {
 // User *currentUser = (User *)[mappingResult.array firstObject];

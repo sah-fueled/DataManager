@@ -2,7 +2,7 @@
 //  Selfie.h
 //  RestkitExample
 //
-//  Created by sah-fueled on 09/06/14.
+//  Created by sah-fueled on 16/06/14.
 //  Copyright (c) 2014 Fueled.Inc. All rights reserved.
 //
 
@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSString * imageURL;
 @property (nonatomic, retain) NSNumber * isDeletedSelfie;
 @property (nonatomic, retain) NSNumber * selfieId;
+@property (nonatomic, retain) NSNumber * userId;
 @property (nonatomic, retain) User *user;
 
 @end

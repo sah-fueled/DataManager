@@ -43,11 +43,13 @@
                                       @"category": @"category",
                                       @"imageSize":@"imageSize",
                                       @"imageUrl":@"imageURL",
-                                      @"isDeleted":@"isDeleted"
+                                      @"isDeleted":@"isDeleted",
+                                      @"user": @"userId"
                                       };
   mapping.identificationAttributes = @[@"selfieId"];
   [mapping addAttributeMappingsFromDictionary:mappingDictionary];
-  [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"user" toKeyPath:@"user" withMapping:[MappingProvider userMappingForStore:store]]];
+  [mapping addConnectionForRelationship:@"user" connectedBy:@{ @"userId": @"userId" }];
+//  [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"userId" toKeyPath:@"user" withMapping:[MappingProvider userMappingForStore:store]]];
   return mapping;
 }
 
