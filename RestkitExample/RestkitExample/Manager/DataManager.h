@@ -30,6 +30,5 @@
 - (void)setupResponseDescriptorsForStore:(RKManagedObjectStore *)store;
 - (void)setupPagination;
 
-- (void)authorizeWithCompletion:(void (^)(BOOL success))block;
 - (void)fetchObjectsWithCompletion:(void(^)(NSArray *objects, NSError *error))block;
 @end

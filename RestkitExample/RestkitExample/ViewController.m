@@ -130,7 +130,14 @@
 - (IBAction)login:(id)sender {
   [[AccountManager sharedManager]loginWithUsername:self.loginUsername.text withPassword:self.loginPassword.text withCompletion:^(NSString *token, NSError *error) {
     if (token) {
-      [[RestkitModel sharedModel] setUserToken:token];
+      [RestkitModel sharedModel].userToken = token;
+      [[DataManager sharedManager].objectManager.HTTPClient setDefaultHeader:@"Authorization" value:[RestkitModel sharedModel].userToken];
+      [[UserDataManager sharedManager]shouldDataPersist:YES];
+      [[UserDataManager sharedManager]loadAuthenticatedUser:^(User *user) {
+         [self performSegueWithIdentifier:@"showSelfie" sender:nil];
+      } failure:^(RKObjectRequestOperation *requestOperation, NSError *error) {
+        
+      }];
     }
     
   }];

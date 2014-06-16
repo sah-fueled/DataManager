@@ -48,19 +48,19 @@ static UserDataManager *sharedDataManager = nil;
 }
 
 
-- (void) loadAuthenticatedUser:(void (^)(User *))success failure:(void (^)(RKObjectRequestOperation *, NSError *))failure {
- 
-  
-//  [self getObjectsAtPath:@"user/" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-// if (success) {
-// User *currentUser = (User *)[mappingResult.array firstObject];
-// success(currentUser);
-// }
-// } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-// if (failure) {
-// failure(operation, error);
-// }
-// }];
+- (void) loadAuthenticatedUser:(void (^)(User *user))success failure:(void (^)(RKObjectRequestOperation *requestOperation, NSError *error))failure {  
+  [self.objectManager getObjectsAtPath:@"user/"
+                            parameters:nil
+                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                             if (success) {
+                               User *currentUser = (User *)[mappingResult.array firstObject];
+                               success(currentUser);
+                             }
+                             } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                               if (failure) {
+                                 failure(operation, error);
+                             }
+  }];
  }
 //+ (void)loadPaginatedSelfieForUser:(User *)user success:(void (^)(NSArray *selfies, NSError *error))block {
 //  [SelfieManager setupResponseDescriptors];

@@ -32,13 +32,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-  if (self.selfie) {
+    if (self.selfie) {
     self.selfieIdLabel.text = [NSString stringWithFormat:@"SelfieId : %@",self.selfie.selfieId];
     self.captionTextField.text = [NSString stringWithFormat:@"%@",self.selfie.caption];
-
   }
-  [[SelfieDataManager sharedManager] authorizeWithCompletion:^(BOOL success) {}];
-
 }
 
 - (void)didReceiveMemoryWarning

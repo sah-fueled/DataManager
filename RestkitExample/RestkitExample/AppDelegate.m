@@ -13,21 +13,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-  [[DataManager sharedManager] authorizeWithCompletion:^(BOOL success) {
-    
-  }];
-
-//  [[ObjectManager sharedManager] authorizeWithCompletion:^(BOOL success) {
-//    if (success) {
-//
-//    }else {
-//    
-//    }
-//    
-//  }];
-//  
-  
+{  
   // Override point for customization after application launch.
     return YES;
 }

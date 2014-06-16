@@ -42,11 +42,9 @@
 
   [self.tableView registerClass:[SelfieTableViewCell class] forCellReuseIdentifier:@"selfieCell"];
   [self.tableView registerNib:[UINib nibWithNibName:@"SelfieTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"selfieCell"];
-  [[UserDataManager sharedManager] authorizeWithCompletion:^(BOOL success) {
     [[UserDataManager sharedManager] shouldDataPersist:YES];
     [[UserDataManager sharedManager]setPath:@"user/"];
     [[UserDataManager sharedManager] fetchObjectsWithCompletion:^(NSArray *objects, NSError *error) {
-      [[SelfieDataManager sharedManager]authorizeWithCompletion:^(BOOL success) {
         NSLog(@"auth = %@",[SelfieDataManager sharedManager].objectManager.HTTPClient.defaultHeaders);
         [[SelfieDataManager sharedManager] shouldDataPersist:YES];
         [[SelfieDataManager sharedManager]setupPagination];
@@ -54,9 +52,7 @@
         [self configureFetchResultsController];
         [self.tableView reloadData];
       }];
-    }];
-    
-  }];
+
 //  [[SelfieDataManager sharedManager]authorizeWithCompletion:^(BOOL success) {
 //
 //    [[SelfieDataManager sharedManager] shouldDataPersist:NO];

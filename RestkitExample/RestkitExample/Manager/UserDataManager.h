@@ -7,7 +7,10 @@
 //
 
 #import "DataManager.h"
+#import "User.h"
 
 @interface UserDataManager : DataManager
+
+- (void) loadAuthenticatedUser:(void (^)(User *user))success failure:(void (^)(RKObjectRequestOperation *requestOperation, NSError *error))failure;
 
 @end

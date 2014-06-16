@@ -12,7 +12,7 @@
 @interface RestkitModel : NSObject
 
 @property (nonatomic,strong) User *currentUser;
-@property (nonatomic,strong) NSString *userToken;
+@property (readwrite,strong) NSString *userToken;
 
 + (RestkitModel *)sharedModel;
 
