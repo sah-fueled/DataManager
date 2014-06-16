@@ -34,6 +34,8 @@
 		69918E081949ADAC00C0AE97 /* SelfieDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 69918E071949ADAC00C0AE97 /* SelfieDataManager.m */; };
 		69A026CC1949E42C00EE82D5 /* SelfieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A026CB1949E42C00EE82D5 /* SelfieDetailViewController.m */; };
 		69B78434194EC72B00931E7C /* Selfie.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B78433194EC72B00931E7C /* Selfie.m */; };
+		69B78438194ED8FA00931E7C /* TransientSelfie.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B78437194ED8FA00931E7C /* TransientSelfie.m */; };
+		69B7843B194ED91300931E7C /* TransientUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B7843A194ED91300931E7C /* TransientUser.m */; };
 		69BBA2A6194ADA3700558467 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BBA2A5194ADA3700558467 /* LoginView.m */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +94,10 @@
 		69A026CB1949E42C00EE82D5 /* SelfieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfieDetailViewController.m; sourceTree = "<group>"; };
 		69B78432194EC72B00931E7C /* Selfie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Selfie.h; path = Entities/Selfie.h; sourceTree = "<group>"; };
 		69B78433194EC72B00931E7C /* Selfie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Selfie.m; path = Entities/Selfie.m; sourceTree = "<group>"; };
+		69B78436194ED8FA00931E7C /* TransientSelfie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransientSelfie.h; path = TransientEntity/TransientSelfie.h; sourceTree = "<group>"; };
+		69B78437194ED8FA00931E7C /* TransientSelfie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TransientSelfie.m; path = TransientEntity/TransientSelfie.m; sourceTree = "<group>"; };
+		69B78439194ED91300931E7C /* TransientUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransientUser.h; path = TransientEntity/TransientUser.h; sourceTree = "<group>"; };
+		69B7843A194ED91300931E7C /* TransientUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TransientUser.m; path = TransientEntity/TransientUser.m; sourceTree = "<group>"; };
 		69BBA2A4194ADA3700558467 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginView.h; path = CustomViews/LoginView.h; sourceTree = "<group>"; };
 		69BBA2A5194ADA3700558467 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginView.m; path = CustomViews/LoginView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +169,7 @@
 				6991601A1946D2CE002D5ED9 /* RestkitModel.m */,
 				698B45551945AFAC002EF6BC /* MappingProvider */,
 				698B454D19459A0C002EF6BC /* Managers */,
+				69B78435194ED8C600931E7C /* TransientEntities */,
 				698B454B194599D3002EF6BC /* Entities */,
 				698B451C19457F72002EF6BC /* AppDelegate.h */,
 				698B451D19457F72002EF6BC /* AppDelegate.m */,
@@ -250,6 +257,17 @@
 				6991602B1946FFF3002D5ED9 /* SelfieTableViewCell.xib */,
 			);
 			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		69B78435194ED8C600931E7C /* TransientEntities */ = {
+			isa = PBXGroup;
+			children = (
+				69B78436194ED8FA00931E7C /* TransientSelfie.h */,
+				69B78437194ED8FA00931E7C /* TransientSelfie.m */,
+				69B78439194ED91300931E7C /* TransientUser.h */,
+				69B7843A194ED91300931E7C /* TransientUser.m */,
+			);
+			name = TransientEntities;
 			sourceTree = "<group>";
 		};
 		69BBA2A3194ADA0700558467 /* CustomView */ = {
@@ -401,11 +419,13 @@
 				698B456A1945B260002EF6BC /* User.m in Sources */,
 				698B451E19457F72002EF6BC /* AppDelegate.m in Sources */,
 				699160221946EF34002D5ED9 /* SelfieListViewController.m in Sources */,
+				69B7843B194ED91300931E7C /* TransientUser.m in Sources */,
 				69918E081949ADAC00C0AE97 /* SelfieDataManager.m in Sources */,
 				698B45581945AFF2002EF6BC /* MappingProvider.m in Sources */,
 				69B78434194EC72B00931E7C /* Selfie.m in Sources */,
 				69A026CC1949E42C00EE82D5 /* SelfieDetailViewController.m in Sources */,
 				69918DFF1949880200C0AE97 /* DataManager.m in Sources */,
+				69B78438194ED8FA00931E7C /* TransientSelfie.m in Sources */,
 				6991601B1946D2CE002D5ED9 /* RestkitModel.m in Sources */,
 				698B451A19457F72002EF6BC /* main.m in Sources */,
 				698B454419459638002EF6BC /* Model.xcdatamodeld in Sources */,

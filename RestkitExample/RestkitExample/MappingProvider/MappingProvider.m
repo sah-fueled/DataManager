@@ -10,18 +10,35 @@
 #import "MappingProvider.h"
 #import "User.h"
 #import "Selfie.h"
+#import "TransientUser.h"
+#import "TransientSelfie.h"
 
 @implementation MappingProvider
 
 + (RKObjectMapping *)userMapping {
   
-  RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[User class]];
+  RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[TransientUser class]];
   NSDictionary *mappingDictionary = @{@"id": @"userId",
                                       @"name": @"name",
                                       @"email": @"email",
                                       };
   [mapping addAttributeMappingsFromDictionary:mappingDictionary];
   
+  return mapping;
+}
+
++ (RKObjectMapping *)selfieMapping {
+  RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[TransientSelfie class]];
+  NSDictionary *mappingDictionary = @{@"id": @"selfieId",
+                                      @"caption": @"caption",
+                                      @"category": @"category",
+                                      @"imageSize":@"imageSize",
+                                      @"imageUrl":@"imageURL",
+                                      @"isDeleted":@"isDeletedSelfie",
+                                      @"user": @"userId"
+                                      };
+  [mapping addAttributeMappingsFromDictionary:mappingDictionary];
+//  [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"user" toKeyPath:@"user" withMapping:[MappingProvider userMapping]]];
   return mapping;
 }
 
@@ -43,7 +60,7 @@
                                       @"category": @"category",
                                       @"imageSize":@"imageSize",
                                       @"imageUrl":@"imageURL",
-                                      @"isDeleted":@"isDeleted",
+                                      @"isDeleted":@"isDeletedSelfie",
                                       @"user": @"userId"
                                       };
   mapping.identificationAttributes = @[@"selfieId"];
@@ -69,20 +86,6 @@
 //  [mapping addAttributeMappingsFromArray:@[@"id", @"caption", @"category",@"imageSize"]];
 
   [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"user" toKeyPath:@"user" withMapping:[MappingProvider userMapping].inverseMapping]];
-  return mapping;
-}
-
-+ (RKObjectMapping *)selfieMapping {
-  RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Selfie class]];
-  NSDictionary *mappingDictionary = @{@"id": @"selfieId",
-                                      @"caption": @"caption",
-                                      @"category": @"category",
-                                      @"imageSize":@"imageSize",
-                                      @"imageUrl":@"imageURL",
-                                      @"isDeleted":@"isDeleted"
-                                      };
-  [mapping addAttributeMappingsFromDictionary:mappingDictionary];
-  [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"user" toKeyPath:@"user" withMapping:[MappingProvider userMapping]]];
   return mapping;
 }
 

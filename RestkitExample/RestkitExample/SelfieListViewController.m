@@ -42,29 +42,29 @@
 
   [self.tableView registerClass:[SelfieTableViewCell class] forCellReuseIdentifier:@"selfieCell"];
   [self.tableView registerNib:[UINib nibWithNibName:@"SelfieTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"selfieCell"];
-  [[UserDataManager sharedManager] authorizeWithCompletion:^(BOOL success) {
-    [[UserDataManager sharedManager] shouldDataPersist:YES];
-    [[UserDataManager sharedManager]setPath:@"user/"];
-    [[UserDataManager sharedManager] fetchObjectsWithCompletion:^(NSArray *objects, NSError *error) {
-      [[SelfieDataManager sharedManager]authorizeWithCompletion:^(BOOL success) {
-        NSLog(@"auth = %@",[SelfieDataManager sharedManager].objectManager.HTTPClient.defaultHeaders);
-        [[SelfieDataManager sharedManager] shouldDataPersist:YES];
-        [[SelfieDataManager sharedManager]setupPagination];
-        [[SelfieDataManager sharedManager].paginator loadPage:1];
-        [self configureFetchResultsController];
-        [self.tableView reloadData];
-      }];
-    }];
-    
-  }];
-//  [[SelfieDataManager sharedManager]authorizeWithCompletion:^(BOOL success) {
-//
-//    [[SelfieDataManager sharedManager] shouldDataPersist:NO];
-//    [[SelfieDataManager sharedManager] setPath:@"selfie/"];
-//    [[SelfieDataManager sharedManager] fetchObjectsWithCompletion:^(NSArray *objects, NSError *error) {
-//      
+//  [[UserDataManager sharedManager] authorizeWithCompletion:^(BOOL success) {
+//    [[UserDataManager sharedManager] shouldDataPersist:YES];
+//    [[UserDataManager sharedManager]setPath:@"user/"];
+//    [[UserDataManager sharedManager] fetchObjectsWithCompletion:^(NSArray *objects, NSError *error) {
+//      [[SelfieDataManager sharedManager]authorizeWithCompletion:^(BOOL success) {
+//        NSLog(@"auth = %@",[SelfieDataManager sharedManager].objectManager.HTTPClient.defaultHeaders);
+//        [[SelfieDataManager sharedManager] shouldDataPersist:YES];
+//        [[SelfieDataManager sharedManager]setupPagination];
+//        [[SelfieDataManager sharedManager].paginator loadPage:1];
+//        [self configureFetchResultsController];
+//        [self.tableView reloadData];
+//      }];
 //    }];
+//    
 //  }];
+  [[SelfieDataManager sharedManager]authorizeWithCompletion:^(BOOL success) {
+
+    [[SelfieDataManager sharedManager] shouldDataPersist:NO];
+    [[SelfieDataManager sharedManager] setPath:@"selfie/"];
+    [[SelfieDataManager sharedManager] fetchObjectsWithCompletion:^(NSArray *objects, NSError *error) {
+      
+    }];
+  }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -90,14 +90,11 @@
   BOOL fetchSuccessful = [self.fetchedResultsController performFetch:&error];
   if (! fetchSuccessful) {
     NSLog(@"Error fetching data");
-  }else {
-    NSLog(@"Number of objects = %d",self.fetchedResultsController.fetchedObjects.count);
   }
-
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-     NSLog(@"Number of objects = %d",self.fetchedResultsController.fetchedObjects.count);
+     NSLog(@"Number of objects in coredata = %d",self.fetchedResultsController.fetchedObjects.count);
   return self.fetchedResultsController.fetchedObjects.count;
 }
 
