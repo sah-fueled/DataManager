@@ -10,9 +10,10 @@
 #import "SelfieDataManager.h"
 #import "RestkitModel.h"
 
-@interface SelfieDetailViewController ()
+@interface SelfieDetailViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *selfieIdLabel;
 @property (weak, nonatomic) IBOutlet UITextField *captionTextField;
+@property (weak, nonatomic) IBOutlet UIImageView *selfieImageView;
 
 @end
 
@@ -42,17 +43,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)saveInfo:(id)sender {
   if (!self.selfie) {
     [[SelfieDataManager sharedManager] shouldDataPersist:YES];
@@ -68,6 +58,22 @@
       NSLog(@"error = %@",error);
     }];
   }
+}
+
+- (IBAction)showCamera:(id)sender {
+  UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
+  imagePicker.delegate = self;
+  imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+  [self presentViewController:imagePicker animated:YES completion:^{
+    
+  }];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+  UIImage *originalImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+  [picker dismissViewControllerAnimated:YES completion:^{
+    [self.selfieImageView setImage:originalImage];
+  }];
 }
 
 @end
