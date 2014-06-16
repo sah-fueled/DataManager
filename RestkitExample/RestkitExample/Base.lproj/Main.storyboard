@@ -59,20 +59,20 @@
                                 <rect key="frame" x="52" y="210" width="232" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U7G-RG-fla" userLabel="signup username">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U7G-RG-fla" userLabel="signup username">
                                         <rect key="frame" x="20" y="20" width="192" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bRf-Jn-yTt" userLabel="signup password">
-                                        <rect key="frame" x="20" y="90" width="192" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eL3-Hr-cKV" userLabel="email">
+                                        <rect key="frame" x="20" y="55" width="192" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eL3-Hr-cKV" userLabel="signup confirmPassword">
-                                        <rect key="frame" x="20" y="55" width="192" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bRf-Jn-yTt" userLabel="signup password">
+                                        <rect key="frame" x="20" y="90" width="192" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -95,10 +95,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="c9v-ed-9Dc"/>
                     <connections>
-                        <outlet property="confPasswordField" destination="bRf-Jn-yTt" id="FYJ-bT-5oP"/>
+                        <outlet property="emailField" destination="eL3-Hr-cKV" id="hzW-2P-S99"/>
                         <outlet property="loginPassword" destination="hAq-NY-tkR" id="gyf-Ky-UAc"/>
                         <outlet property="loginUsername" destination="VOe-i5-Ilm" id="Fup-Xp-13u"/>
-                        <outlet property="signupPasswordField" destination="eL3-Hr-cKV" id="XEM-1K-pFO"/>
+                        <outlet property="signupPasswordField" destination="bRf-Jn-yTt" id="FmZ-qg-yIm"/>
                         <outlet property="signupUsernameField" destination="U7G-RG-fla" id="an6-23-tCS"/>
                         <segue destination="IDD-Ub-zWK" kind="push" identifier="showSelfie" id="S5d-rp-4pu"/>
                     </connections>

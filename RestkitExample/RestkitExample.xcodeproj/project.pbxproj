@@ -36,6 +36,7 @@
 		69B78434194EC72B00931E7C /* Selfie.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B78433194EC72B00931E7C /* Selfie.m */; };
 		69B78438194ED8FA00931E7C /* TransientSelfie.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B78437194ED8FA00931E7C /* TransientSelfie.m */; };
 		69B7843B194ED91300931E7C /* TransientUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B7843A194ED91300931E7C /* TransientUser.m */; };
+		69B7843E194F1C6F00931E7C /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B7843D194F1C6F00931E7C /* AccountManager.m */; };
 		69BBA2A6194ADA3700558467 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BBA2A5194ADA3700558467 /* LoginView.m */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,8 @@
 		69B78437194ED8FA00931E7C /* TransientSelfie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TransientSelfie.m; path = TransientEntity/TransientSelfie.m; sourceTree = "<group>"; };
 		69B78439194ED91300931E7C /* TransientUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransientUser.h; path = TransientEntity/TransientUser.h; sourceTree = "<group>"; };
 		69B7843A194ED91300931E7C /* TransientUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TransientUser.m; path = TransientEntity/TransientUser.m; sourceTree = "<group>"; };
+		69B7843C194F1C6F00931E7C /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountManager.h; path = Manager/AccountManager.h; sourceTree = "<group>"; };
+		69B7843D194F1C6F00931E7C /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountManager.m; path = Manager/AccountManager.m; sourceTree = "<group>"; };
 		69BBA2A4194ADA3700558467 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginView.h; path = CustomViews/LoginView.h; sourceTree = "<group>"; };
 		69BBA2A5194ADA3700558467 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginView.m; path = CustomViews/LoginView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -236,6 +239,8 @@
 				69918E071949ADAC00C0AE97 /* SelfieDataManager.m */,
 				69918E031949A2E400C0AE97 /* UserDataManager.h */,
 				69918E041949A2E400C0AE97 /* UserDataManager.m */,
+				69B7843C194F1C6F00931E7C /* AccountManager.h */,
+				69B7843D194F1C6F00931E7C /* AccountManager.m */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -429,6 +434,7 @@
 				6991601B1946D2CE002D5ED9 /* RestkitModel.m in Sources */,
 				698B451A19457F72002EF6BC /* main.m in Sources */,
 				698B454419459638002EF6BC /* Model.xcdatamodeld in Sources */,
+				69B7843E194F1C6F00931E7C /* AccountManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

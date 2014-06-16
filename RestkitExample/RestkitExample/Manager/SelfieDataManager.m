@@ -20,9 +20,6 @@ static SelfieDataManager *sharedDataManager = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     sharedDataManager = [super sharedManager];
-//    [sharedDataManager authorizeWithCompletion:^(BOOL success) {
-//    
-//    }];
   });
   return sharedDataManager;
 }
@@ -35,8 +32,8 @@ static SelfieDataManager *sharedDataManager = nil;
 }
 
 - (void) setupRequestDescriptorsForStore:(RKManagedObjectStore *)store {
-  RKRequestDescriptor * requestDescriptor =
-  [RKRequestDescriptor requestDescriptorWithMapping:[MappingProvider selfieRequestMappingForStore:store] objectClass:[NSDictionary class] rootKeyPath:@"selfie/" method:RKRequestMethodAny];
+  RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:[MappingProvider selfieMappingForStore:store].inverseMapping objectClass:[Selfie class] rootKeyPath:nil method:RKRequestMethodAny];
+
   [self.objectManager addRequestDescriptor:requestDescriptor];
 }
 

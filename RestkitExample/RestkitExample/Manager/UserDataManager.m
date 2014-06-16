@@ -19,9 +19,6 @@ static UserDataManager *sharedDataManager = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     sharedDataManager = [super sharedManager];
-//    [sharedDataManager authorizeWithCompletion:^(BOOL success) {
-//      
-//    }];
   });
   return sharedDataManager;
 }
@@ -49,6 +46,7 @@ static UserDataManager *sharedDataManager = nil;
                                                                                                        statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
   [self.objectManager addResponseDescriptor:authenticatedUserResponseDescriptors];
 }
+
 
 - (void) loadAuthenticatedUser:(void (^)(User *))success failure:(void (^)(RKObjectRequestOperation *, NSError *))failure {
  

@@ -11,6 +11,7 @@
 #import "UserDataManager.h"
 #import "SelfieDataManager.h"
 #import "DataManager.h"
+#import "AccountManager.h"
 #import "User.h"
 #import "RestkitModel.h"
 
@@ -21,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *loginPassword;
 @property (weak, nonatomic) IBOutlet UITextField *signupUsernameField;
 @property (weak, nonatomic) IBOutlet UITextField *signupPasswordField;
-@property (weak, nonatomic) IBOutlet UITextField *confPasswordField;
+@property (weak, nonatomic) IBOutlet UITextField *emailField;
 
 @end
 
@@ -35,7 +36,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  [self performSegueWithIdentifier:@"showSelfie" sender:nil];
+//  [self performSegueWithIdentifier:@"showSelfie" sender:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -118,22 +119,31 @@
  
 */
 - (IBAction)signup:(id)sender {
-  
-//  User *user = [User new];
-//  user.email = self.signupUsernameField.
+  [[AccountManager sharedManager]signupWithUsername:self.signupUsernameField.text
+                                          withEmail:self.emailField.text
+                                       withPassword:self.signupPasswordField.text
+                                     withCompletion:^(BOOL success) {
+    
+  }];
 }
 
 - (IBAction)login:(id)sender {
-  NSDictionary *param = @{@"name" : self.loginUsername.text};
-  [UserDataManager sharedManager].path = @"user/";
-  [[UserDataManager sharedManager]shouldDataPersist:YES];
-  [[UserDataManager sharedManager].objectManager getObjectsAtPath:@"user/" parameters:param success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-    [RestkitModel sharedModel].currentUser = (User *)[mappingResult firstObject];
-    [self performSegueWithIdentifier:@"showSelfie" sender:nil];
-
-  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-
+  [[AccountManager sharedManager]loginWithUsername:self.loginUsername.text withPassword:self.loginPassword.text withCompletion:^(NSString *token, NSError *error) {
+    if (token) {
+      [[RestkitModel sharedModel] setUserToken:token];
+    }
+    
   }];
+//  NSDictionary *param = @{@"name" : self.loginUsername.text};
+//  [UserDataManager sharedManager].path = @"user/";
+//  [[UserDataManager sharedManager]shouldDataPersist:YES];
+//  [[UserDataManager sharedManager].objectManager getObjectsAtPath:@"user/" parameters:param success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+//    [RestkitModel sharedModel].currentUser = (User *)[mappingResult firstObject];
+//    [self performSegueWithIdentifier:@"showSelfie" sender:nil];
+//
+//  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+//
+//  }];
 }
 
 @end

@@ -27,7 +27,6 @@ static DataManager *sharedDataManager = nil;
   self = [super init];
   if (self) {
     [self configureObjectManager];
-    [self shouldDataPersist:NO];
     [self setupRoutes];
   }
   return self;
@@ -37,6 +36,7 @@ static DataManager *sharedDataManager = nil;
   NSURL *url = [NSURL URLWithString:BASE_URL];
   self.objectManager = [RKObjectManager managerWithBaseURL:url];
   self.objectManager.requestSerializationMIMEType = RKMIMETypeJSON;
+  [self.objectManager.HTTPClient setDefaultHeader:@"Content-Type" value:@"application/json"];
 }
 
 - (void)shouldDataPersist:(BOOL)shouldPersist {
@@ -181,6 +181,7 @@ static DataManager *sharedDataManager = nil;
                                   NSString *token = [NSString stringWithFormat:@"%@ %@",@"JWT",[dict objectForKey:@"token"]];
                                   NSLog(@"data = %@ %@",token,error);
                                   [self.objectManager.HTTPClient setDefaultHeader:@"Authorization" value:token];
+//                                  [self.objectManager.HTTPClient setAuthorizationHeaderWithToken:token];
                                   block(YES);
                                 }
   }];
