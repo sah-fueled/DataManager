@@ -42,13 +42,13 @@
 
   [self.tableView registerClass:[SelfieTableViewCell class] forCellReuseIdentifier:@"selfieCell"];
   [self.tableView registerNib:[UINib nibWithNibName:@"SelfieTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"selfieCell"];
-    [[UserDataManager sharedManager] shouldDataPersist:YES];
-    [[UserDataManager sharedManager]setPath:@"user/"];
-    [[UserDataManager sharedManager] fetchObjectsWithCompletion:^(NSArray *objects, NSError *error) {
-        NSLog(@"auth = %@",[SelfieDataManager sharedManager].objectManager.HTTPClient.defaultHeaders);
-        [[SelfieDataManager sharedManager] shouldDataPersist:YES];
-        [[SelfieDataManager sharedManager]setupPagination];
-        [[SelfieDataManager sharedManager].paginator loadPage:1];
+    [[SelfieDataManager sharedManager] shouldDataPersist:YES];
+    [[SelfieDataManager sharedManager]setPath:@"selfies/"];
+  NSLog(@"manager =%@",[SelfieDataManager sharedManager]);
+    [[SelfieDataManager sharedManager] fetchObjectsWithCompletion:^(NSArray *objects, NSError *error) {
+//        NSLog(@"auth = %@",[SelfieDataManager sharedManager].objectManager.HTTPClient.defaultHeaders);
+//        [[SelfieDataManager sharedManager]setupPagination];
+//        [[SelfieDataManager sharedManager].paginator loadPage:1];
         [self configureFetchResultsController];
         [self.tableView reloadData];
       }];

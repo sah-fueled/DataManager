@@ -40,8 +40,8 @@ static SelfieDataManager *sharedDataManager = nil;
 - (void) setupResponseDescriptors {
   RKResponseDescriptor *selfieResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider selfieMapping]
                                                                                                 method:RKRequestMethodGET
-                                                                                           pathPattern:@"selfie/"
-                                                                                               keyPath:@"results"
+                                                                                           pathPattern:@"selfies/"
+                                                                                               keyPath:nil
                                                                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
   [self.objectManager addResponseDescriptor:selfieResponseDescriptor];
 }
@@ -49,8 +49,8 @@ static SelfieDataManager *sharedDataManager = nil;
 - (void)setupResponseDescriptorsForStore:(RKManagedObjectStore *)store {
   RKResponseDescriptor *selfieResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider selfieMappingForStore:store]
                                                                                                 method:RKRequestMethodGET
-                                                                                           pathPattern:@"selfie/"
-                                                                                               keyPath:@"results"
+                                                                                           pathPattern:@"selfies/"
+                                                                                               keyPath:nil
                                                                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
   [self.objectManager addResponseDescriptor:selfieResponseDescriptor];
 

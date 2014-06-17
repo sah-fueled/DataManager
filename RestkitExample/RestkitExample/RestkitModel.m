@@ -16,17 +16,26 @@ static RestkitModel *sharedModel = nil;
 
 @implementation RestkitModel
 
+@synthesize currentUser;
+
 + (RestkitModel *) sharedModel {
-  static dispatch_once_t onceToken;
-  dispatch_once(&onceToken, ^{
-    [sharedModel initialSetup];
-  });
+  if (sharedModel == nil) {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+      sharedModel = [[RestkitModel alloc]init];
+    });
+  }
   return sharedModel;
 }
 
 
-- (void)initialSetup {
-    
+- (RestkitModel *)init {
+  self = [super init];
+  if (self) {
+  
+  }
+  
+  return self;
 }
 
 @end

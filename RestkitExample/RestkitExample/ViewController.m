@@ -15,6 +15,8 @@
 #import "User.h"
 #import "RestkitModel.h"
 
+@import Security;
+
 @interface ViewController ()
 
 @property (nonatomic, strong) User *user;
@@ -36,7 +38,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-//  [self performSegueWithIdentifier:@"showSelfie" sender:nil];
+  NSLog(@"rest model = %@ %@",[RestkitModel sharedModel],[RestkitModel sharedModel].currentUser);
+  if ([RestkitModel sharedModel].currentUser) {
+    [self performSegueWithIdentifier:@"showSelfie" sender:nil];
+  }
 }
 
 - (void)didReceiveMemoryWarning
@@ -128,12 +133,22 @@
 }
 
 - (IBAction)login:(id)sender {
+  [UserDataManager sharedManager];
   [[AccountManager sharedManager]loginWithUsername:self.loginUsername.text withPassword:self.loginPassword.text withCompletion:^(NSString *token, NSError *error) {
     if (token) {
+    
       [RestkitModel sharedModel].userToken = token;
-      [[DataManager sharedManager].objectManager.HTTPClient setDefaultHeader:@"Authorization" value:[RestkitModel sharedModel].userToken];
+//      KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:@"YourAppLogin" accessGroup:nil];
+
+      [[DataManager sharedManager].objectManager.HTTPClient setDefaultHeader:@"Authorization" value:token];
+      [[UserDataManager sharedManager].objectManager.HTTPClient setDefaultHeader:@"Authorization" value:token];
+      [[SelfieDataManager sharedManager].objectManager.HTTPClient setDefaultHeader:@"Authorization" value:token];
+
       [[UserDataManager sharedManager]shouldDataPersist:YES];
       [[UserDataManager sharedManager]loadAuthenticatedUser:^(User *user) {
+        [[RestkitModel sharedModel]setCurrentUser:user];
+        NSLog(@"rest model = %@ %@ %@",[RestkitModel sharedModel],[RestkitModel sharedModel].currentUser,user);
+
          [self performSegueWithIdentifier:@"showSelfie" sender:nil];
       } failure:^(RKObjectRequestOperation *requestOperation, NSError *error) {
         

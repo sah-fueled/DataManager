@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A0773FF800B47B8B63BF0D7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C6F1AA89CC48949D6DA40B /* libPods.a */; };
+		6929E19F19504FAA0048C416 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6929E19E19504FAA0048C416 /* Security.framework */; };
 		698B450E19457F72002EF6BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698B450D19457F72002EF6BC /* Foundation.framework */; };
 		698B451019457F72002EF6BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698B450F19457F72002EF6BC /* CoreGraphics.framework */; };
 		698B451219457F72002EF6BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698B451119457F72002EF6BC /* UIKit.framework */; };
@@ -53,6 +54,8 @@
 /* Begin PBXFileReference section */
 		18C6F1AA89CC48949D6DA40B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FD47EBA4A9F4A7CA93AFCF8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		6929E19E19504FAA0048C416 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6929E1AC195063340048C416 /* libPods-UICKeyChainStore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-UICKeyChainStore.a"; path = "Pods/build/Debug-iphoneos/libPods-UICKeyChainStore.a"; sourceTree = "<group>"; };
 		698B450A19457F72002EF6BC /* RestkitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestkitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		698B450D19457F72002EF6BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		698B450F19457F72002EF6BC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -110,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6929E19F19504FAA0048C416 /* Security.framework in Frameworks */,
 				698B451019457F72002EF6BC /* CoreGraphics.framework in Frameworks */,
 				698B451219457F72002EF6BC /* UIKit.framework in Frameworks */,
 				698B450E19457F72002EF6BC /* Foundation.framework in Frameworks */,
@@ -130,6 +134,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6929E1A019505EAB0048C416 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				6929E1A419505F030048C416 /* KeychainWrapper */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		6929E1A419505F030048C416 /* KeychainWrapper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = KeychainWrapper;
+			sourceTree = "<group>";
+		};
 		698B450119457F72002EF6BC = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +173,8 @@
 		698B450C19457F72002EF6BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6929E1AC195063340048C416 /* libPods-UICKeyChainStore.a */,
+				6929E19E19504FAA0048C416 /* Security.framework */,
 				698B450D19457F72002EF6BC /* Foundation.framework */,
 				698B450F19457F72002EF6BC /* CoreGraphics.framework */,
 				698B451119457F72002EF6BC /* UIKit.framework */,
@@ -166,6 +187,7 @@
 		698B451319457F72002EF6BC /* RestkitExample */ = {
 			isa = PBXGroup;
 			children = (
+				6929E1A019505EAB0048C416 /* Helper */,
 				69BBA2A3194ADA0700558467 /* CustomView */,
 				699160271946FE35002D5ED9 /* Custom Cells */,
 				699160191946D2CE002D5ED9 /* RestkitModel.h */,
@@ -563,6 +585,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RestkitExample/RestkitExample-Prefix.pch";
 				INFOPLIST_FILE = "RestkitExample/RestkitExample-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -577,6 +603,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RestkitExample/RestkitExample-Prefix.pch";
 				INFOPLIST_FILE = "RestkitExample/RestkitExample-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

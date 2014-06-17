@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 
+@class User;
+
 @interface RestkitModel : NSObject
 
 @property (nonatomic,strong) User *currentUser;

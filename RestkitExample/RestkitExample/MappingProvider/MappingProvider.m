@@ -33,7 +33,7 @@
                                       @"caption": @"caption",
                                       @"category": @"category",
                                       @"imageSize":@"imageSize",
-                                      @"imageUrl":@"imageURL",
+                                      @"image":@"imageURL",
                                       @"isDeleted":@"isDeletedSelfie",
                                       @"user": @"userId"
                                       };
@@ -59,7 +59,7 @@
                                       @"caption": @"caption",
                                       @"category": @"category",
                                       @"imageSize":@"imageSize",
-                                      @"imageUrl":@"imageURL",
+                                      @"image":@"imageURL",
                                       @"isDeleted":@"isDeletedSelfie",
                                       @"user": @"userId"
                                       };
