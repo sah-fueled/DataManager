@@ -28,7 +28,7 @@ PODS:
 
 DEPENDENCIES:
   - RestKit (~> 0.23)
-  - UICKeyChainStore
+  - UICKeyChainStore (= 1.0.5)
 
 SPEC CHECKSUMS:
   AFNetworking: 80c4e0652b08eb34e25b9c0ff3c82556fe5967b4

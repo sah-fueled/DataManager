@@ -17,5 +17,8 @@
 #define kEntityUser     @"User"
 #define kEntitySelfie   @"Selfie"
 
+#define kAPP_NAME         @"restkitExample"
+#define PIN_SAVED         @"isPinSaved"
+#define USER_NAME_KEY     @"username"
 
 #endif

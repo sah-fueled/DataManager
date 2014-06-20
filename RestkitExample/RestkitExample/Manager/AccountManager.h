@@ -19,4 +19,11 @@
 - (void)loginWithUsername:(NSString *)username
              withPassword:(NSString *)password withCompletion:(void (^)(NSString *token, NSError *error)) completion;
 
+- (void)logout;
+
+- (void)refreshTokenWithCompletion:(void(^)(NSString *token, NSError *error)) block;
+
+- (BOOL)hasLoggedInUser;
+
+
 @end

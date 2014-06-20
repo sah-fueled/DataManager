@@ -39,6 +39,7 @@
 		69B7843B194ED91300931E7C /* TransientUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B7843A194ED91300931E7C /* TransientUser.m */; };
 		69B7843E194F1C6F00931E7C /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B7843D194F1C6F00931E7C /* AccountManager.m */; };
 		69BBA2A6194ADA3700558467 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BBA2A5194ADA3700558467 /* LoginView.m */; };
+		69F377F31954581E00D83AAD /* KeyChainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F377F21954581E00D83AAD /* KeyChainWrapper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,8 @@
 		69B7843D194F1C6F00931E7C /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountManager.m; path = Manager/AccountManager.m; sourceTree = "<group>"; };
 		69BBA2A4194ADA3700558467 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginView.h; path = CustomViews/LoginView.h; sourceTree = "<group>"; };
 		69BBA2A5194ADA3700558467 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginView.m; path = CustomViews/LoginView.m; sourceTree = "<group>"; };
+		69F377F11954581E00D83AAD /* KeyChainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyChainWrapper.h; path = Helpers/KeyChainWrapper/KeyChainWrapper.h; sourceTree = "<group>"; };
+		69F377F21954581E00D83AAD /* KeyChainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyChainWrapper.m; path = Helpers/KeyChainWrapper/KeyChainWrapper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,16 +140,10 @@
 		6929E1A019505EAB0048C416 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				6929E1A419505F030048C416 /* KeychainWrapper */,
+				69F377F11954581E00D83AAD /* KeyChainWrapper.h */,
+				69F377F21954581E00D83AAD /* KeyChainWrapper.m */,
 			);
 			name = Helper;
-			sourceTree = "<group>";
-		};
-		6929E1A419505F030048C416 /* KeychainWrapper */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = KeychainWrapper;
 			sourceTree = "<group>";
 		};
 		698B450119457F72002EF6BC = {
@@ -443,6 +440,7 @@
 				6991602A1946FE5E002D5ED9 /* SelfieTableViewCell.m in Sources */,
 				69BBA2A6194ADA3700558467 /* LoginView.m in Sources */,
 				698B452419457F72002EF6BC /* ViewController.m in Sources */,
+				69F377F31954581E00D83AAD /* KeyChainWrapper.m in Sources */,
 				698B456A1945B260002EF6BC /* User.m in Sources */,
 				698B451E19457F72002EF6BC /* AppDelegate.m in Sources */,
 				699160221946EF34002D5ED9 /* SelfieListViewController.m in Sources */,

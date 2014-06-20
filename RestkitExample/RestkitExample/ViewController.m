@@ -14,6 +14,7 @@
 #import "AccountManager.h"
 #import "User.h"
 #import "RestkitModel.h"
+#import <UICKeyChainStore.h>
 
 @import Security;
 
@@ -38,8 +39,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  NSLog(@"rest model = %@ %@",[RestkitModel sharedModel],[RestkitModel sharedModel].currentUser);
-  if ([RestkitModel sharedModel].currentUser) {
+  if ([[AccountManager sharedManager] hasLoggedInUser]) {
     [self performSegueWithIdentifier:@"showSelfie" sender:nil];
   }
 }
@@ -134,12 +134,9 @@
 
 - (IBAction)login:(id)sender {
   [UserDataManager sharedManager];
+
   [[AccountManager sharedManager]loginWithUsername:self.loginUsername.text withPassword:self.loginPassword.text withCompletion:^(NSString *token, NSError *error) {
     if (token) {
-    
-      [RestkitModel sharedModel].userToken = token;
-//      KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:@"YourAppLogin" accessGroup:nil];
-
       [[DataManager sharedManager].objectManager.HTTPClient setDefaultHeader:@"Authorization" value:token];
       [[UserDataManager sharedManager].objectManager.HTTPClient setDefaultHeader:@"Authorization" value:token];
       [[SelfieDataManager sharedManager].objectManager.HTTPClient setDefaultHeader:@"Authorization" value:token];
@@ -154,7 +151,6 @@
         
       }];
     }
-    
   }];
 //  NSDictionary *param = @{@"name" : self.loginUsername.text};
 //  [UserDataManager sharedManager].path = @"user/";

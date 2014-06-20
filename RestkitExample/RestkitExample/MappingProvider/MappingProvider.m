@@ -17,7 +17,7 @@
 
 + (RKObjectMapping *)userMapping {
   
-  RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[TransientUser class]];
+  RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[User class]];
   NSDictionary *mappingDictionary = @{@"id": @"userId",
                                       @"name": @"name",
                                       @"email": @"email",
